@@ -32,6 +32,10 @@ public class User extends BaseEntity implements UserDetails {
     @Column(nullable = false)
     private Role role;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "park_id")
+    private Park park;
+
     @Column(nullable = false)
     private Boolean isActive;
 
