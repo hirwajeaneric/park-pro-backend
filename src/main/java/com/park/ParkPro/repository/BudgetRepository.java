@@ -11,13 +11,14 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface BudgetRepository extends JpaRepository<Budget, Long> {
+public interface BudgetRepository extends JpaRepository<Budget, UUID> {
     List<Budget> findAllByParkId(UUID parkId);
     List<Budget> findAllByParkIdAndStatus(UUID parkId, BudgetStatus status);
     Optional<Budget> findByParkIdAndFiscalYear(UUID parkId, Integer fiscalYear);
+    boolean existsByParkIdAndFiscalYear(UUID parkId, Integer fiscalYear);
 
     @Query("SELECT b FROM Budget b WHERE b.fiscalYear = :year AND b.status = 'APPROVED'")
-    List<Budget> findAllApprovedBudgetByYear(@Param("year") Integer year);
+    List<Budget> findAllApprovedBudgetsByYear(@Param("year") Integer year);
 
     @Query("SELECT b FROM Budget b WHERE b.park.id = :parkId AND b.status = 'APPROVED'" + "AND b.fiscalYear BETWEEN :startYaer AND :endYear")
     List<Budget> findApprovedBudgetsByParkAndYearRange(

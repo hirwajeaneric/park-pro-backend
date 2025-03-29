@@ -21,5 +21,5 @@ public interface UserRepository extends JpaRepository<User, UUID> {
                                       @Param("role") Role role);
 
     @Query("SELECT u FROM User u WHERE LOWER(u.firstName) LIKE LOWER(concat('%', :name, '%')) "+"OR LOWER(u.lastName) LIKE LOWER(concat('%', :name, '%'))")
-    List<User> searchUsersByName(@Param("name") String name);
+    List<User> searchByName(@Param("name") String name);
 }
