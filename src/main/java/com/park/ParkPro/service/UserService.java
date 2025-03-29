@@ -73,7 +73,7 @@ public class UserService {
     }
 
     @Transactional(readOnly = true)
-    public List<User> searchByName(String name) {
+    public List<User> searchUsersByName(String name) {
         return userRepository.searchByName(name);
     }
 }
