@@ -1,5 +1,6 @@
 package com.park.ParkPro.mapper;
 
+import com.park.ParkPro.dto.UserDto;
 import com.park.ParkPro.model.User;
 import org.mapstruct.Mapping;
 

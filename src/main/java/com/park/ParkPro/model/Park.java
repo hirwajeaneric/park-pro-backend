@@ -34,11 +34,11 @@ public class Park extends BaseEntity {
     @ToString.Exclude
     private Set<Expense> expenses = new HashSet<>();
 
-//    @OneToMany(mappedBy = "park", cascade = CascadeType.ALL, orphanRemoval = true)
-//    @ToString.Exclude
-//    private Set<Bookings> bookings = new HashSet<>();
-//
-//    @OneToMany(mappedBy = "park", cascade = CascadeType.ALL, orphanRemoval = true)
-//    @ToString.Exclude
-//    private Set<Donation> donations = new HashSet<>();
+    @OneToMany(mappedBy = "park", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    private Set<Booking> bookings = new HashSet<>();
+
+    @OneToMany(mappedBy = "park", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    private Set<Donation> donations = new HashSet<>();
 }

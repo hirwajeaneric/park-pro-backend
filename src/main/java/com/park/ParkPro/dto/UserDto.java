@@ -8,9 +8,12 @@ import jakarta.validation.constraints.Size;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.UUID;
+
 @Data
 @Builder
-public class RegisterRequest {
+public class UserDto {
+
     @NotBlank(message = "First name is required")
     private String firstName;
 
@@ -21,12 +24,12 @@ public class RegisterRequest {
     @NotBlank(message = "Email is required")
     private String email;
 
-    @Size(min=8, message = "Password must be at least 8 characters long")
+    @Size(min = 8, message = "Password must be at least 8 characters long")
     @NotBlank(message = "Password is required")
     private String password;
 
     @NotNull(message = "Role is required")
     private Role role;
 
-//    private UUID parkId;
+    private UUID parkId;
 }

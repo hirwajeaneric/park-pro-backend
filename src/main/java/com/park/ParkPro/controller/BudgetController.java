@@ -2,8 +2,8 @@ package com.park.ParkPro.controller;
 
 import com.park.ParkPro.model.Budget;
 import com.park.ParkPro.model.BudgetCategory;
+import com.park.ParkPro.security.UserPrincipal;
 import com.park.ParkPro.service.BudgetService;
-//import com.sun.security.auth.UserPrincipal;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
